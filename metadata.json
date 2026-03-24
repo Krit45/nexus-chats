@@ -1,0 +1,5 @@
+{
+  "name": "Nexus Chat",
+  "description": "A full-stack real-time chat application with group messaging, file sharing, and online status tracking.",
+  "requestFramePermissions": []
+}

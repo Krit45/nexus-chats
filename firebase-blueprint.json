@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the Nexus Chat application.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique ID of the user from Firebase Auth." },
+        "username": { "type": "string", "description": "The display name of the user." },
+        "email": { "type": "string", "description": "The email address of the user." },
+        "avatar": { "type": "string", "description": "The URL of the user's avatar image." },
+        "online": { "type": "boolean", "description": "Whether the user is currently online." },
+        "lastSeen": { "type": "string", "format": "date-time", "description": "The last time the user was active." }
+      },
+      "required": ["uid", "username", "email"]
+    },
+    "Conversation": {
+      "title": "Conversation",
+      "description": "A chat conversation between two or more users.",
+      "type": "object",
+      "properties": {
+        "participants": { "type": "array", "items": { "type": "string" }, "description": "The UIDs of the users in the conversation." },
+        "isGroup": { "type": "boolean", "description": "Whether this is a group chat." },
+        "name": { "type": "string", "description": "The name of the group chat (if applicable)." },
+        "lastMessage": {
+          "type": "object",
+          "properties": {
+            "content": { "type": "string" },
+            "senderId": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+          }
+        },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "The last time the conversation was updated." }
+      },
+      "required": ["participants", "isGroup", "updatedAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A message sent within a conversation.",
+      "type": "object",
+      "properties": {
+        "senderId": { "type": "string", "description": "The UID of the user who sent the message." },
+        "content": { "type": "string", "description": "The text content or file URL of the message." },
+        "type": { "type": "string", "enum": ["text", "image", "file"], "description": "The type of message content." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "The time the message was sent." },
+        "seen": { "type": "boolean", "description": "Whether the message has been seen by the recipient." }
+      },
+      "required": ["senderId", "content", "type", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    },
+    "/conversations/{conversationId}": {
+      "schema": "Conversation",
+      "description": "Chat conversations."
+    },
+    "/conversations/{conversationId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Messages within a conversation."
+    }
+  }
+}
