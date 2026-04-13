@@ -53,7 +53,7 @@ Nexus Chat is a modern, real-time chat application built for seamless communicat
 
 ⚙️ Setup & Installation
   # Clone repo
-    git clone https://github.com/your-username/nexus-chat.git
+    git clone https://github.com/krit45/nexus-chat.git
 
 # Install dependencies
   npm install
