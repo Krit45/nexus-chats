@@ -1,7 +1,7 @@
 💬 Nexus Chat
 🚀 Real-Time Full Stack Messaging Platform
 <p align="center"> <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" /> <img src="https://img.shields.io/badge/Node.js-Backend-green?style=for-the-badge&logo=node.js" /> <img src="https://img.shields.io/badge/Socket.IO-RealTime-black?style=for-the-badge&logo=socket.io" /> <img src="https://img.shields.io/badge/Firebase-Auth-orange?style=for-the-badge&logo=firebase" /> <img src="https://img.shields.io/badge/TailwindCSS-Styling-38B2AC?style=for-the-badge&logo=tailwind-css" /> </p> <p align="center"> ⚡ Lightning fast • 🔐 Secure • 💬 Real-time • 📱 Scalable </p>
-🧠 Overview
+🧠 Overview 
 
 Nexus Chat is a modern, real-time chat application built for seamless communication. It combines powerful backend architecture with a clean, responsive UI to deliver a premium messaging experience.
 
